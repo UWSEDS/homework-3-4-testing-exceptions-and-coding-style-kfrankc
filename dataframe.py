@@ -7,16 +7,16 @@ def validate(file_name):
     df = pd.read_csv(file_name)
     df_correct = pd.read_csv('data.csv')
     try:
+        if (np.any(df_correct.dtypes != df.dtypes)):
+            raise ValueError()
+    except (ValueError):
+        print('Input DataFrame does not contain the correct data type.')
+        exit()
+    try:
         if (sorted(list(df)) != sorted(list(df_correct))):
             raise ValueError()
     except (ValueError):
         print('Input DataFrame does not contain the expected columns.')
-        exit()
-    try:
-        if (np.any(df_correct.dtypes != df.dtypes)):
-            raise ValueError()
-    except (ValueError):
-        print('Input DataFrame columns do not contain the correct data type.')
         exit()
     try:
         if len(df.index) < 1:
