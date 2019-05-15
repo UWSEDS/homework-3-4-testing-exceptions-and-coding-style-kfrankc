@@ -1,5 +1,14 @@
 # Homework 3-4: Coding style and Unit tests.
 
+##### Grade: 13/14  
+
+-1: dataframe.py: you don't actually need to have multiple except statements. I understand that you are trying to give specific error messages in each of them, but having multiple except + exit() is generally not a good style. Instead, what you can do is to break validate() into multiple smaller functions and try + except in each of them.   
+
+Good test coverage!
+
+------
+
+
 **Note: This homework has a total of 14 points.**
 
 In this homework, you will create two python modules and put them in PEP8 style.
